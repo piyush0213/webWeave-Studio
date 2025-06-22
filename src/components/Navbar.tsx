@@ -30,7 +30,13 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 md:bg-transparent ${
+          isOpen && !isScrolled
+            ? 'bg-white/90 backdrop-blur-lg rounded-b-lg shadow-lg'
+            : ''
+        }`}
+      >
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2 group">
@@ -101,7 +107,16 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <button className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform transition-all duration-300">
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="w-full mt-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform transition-all duration-300"
+            >
               Get Started
             </button>
           </div>

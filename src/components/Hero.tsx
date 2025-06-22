@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {
   ArrowRight,
-  Sparkles,
-  Zap,
   Star,
   GraduationCap,
   Heart,
@@ -18,7 +16,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 pt-24 sm:pt-16"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -44,12 +42,6 @@ const Hero = () => {
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
           }`}
         >
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200 text-blue-600 text-sm font-medium mb-8 hover:scale-105 transform transition-all duration-300">
-            <GraduationCap className="w-4 h-4 mr-2" />
-            Fresh College Talent • Passionate Developers
-          </div>
-
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
             <span className="block">WebWeave</span>
